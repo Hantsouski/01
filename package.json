@@ -1,0 +1,30 @@
+{
+  "name": "01",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "@thi.ng/math": "^5.10.12",
+    "@thi.ng/matrices": "^2.3.36",
+    "@thi.ng/pixel": "^6.1.31",
+    "@thi.ng/rstream": "^8.4.3",
+    "@thi.ng/rstream-gestures": "^5.0.73",
+    "@thi.ng/scenegraph": "^1.0.43",
+    "@thi.ng/shader-ast": "^0.15.14",
+    "@thi.ng/shader-ast-stdlib": "^0.18.14",
+    "@thi.ng/transducers": "^9.0.4",
+    "@thi.ng/vectors": "^7.10.30",
+    "@thi.ng/webgl": "^6.8.14",
+    "gsap": "^3.12.5",
+    "xstate": "^5.12.0"
+  }
+}
