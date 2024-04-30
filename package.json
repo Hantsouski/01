@@ -10,7 +10,8 @@
   },
   "devDependencies": {
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-top-level-await": "^1.4.1"
   },
   "dependencies": {
     "@thi.ng/math": "^5.10.12",
@@ -24,7 +25,9 @@
     "@thi.ng/transducers": "^9.0.4",
     "@thi.ng/vectors": "^7.10.30",
     "@thi.ng/webgl": "^6.8.14",
+    "global": "^4.4.0",
     "gsap": "^3.12.5",
+    "vercel": "^34.1.4",
     "xstate": "^5.12.0"
   }
 }

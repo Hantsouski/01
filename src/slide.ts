@@ -1,4 +1,4 @@
-import { ModelSpec, Texture, draw } from "@thi.ng/webgl";
+import { GLMat4, ModelSpec, Texture, draw } from "@thi.ng/webgl";
 import { AppCtx } from "./api";
 import { Node3D } from "@thi.ng/scenegraph";
 import { setC } from "@thi.ng/vectors";
@@ -23,8 +23,6 @@ export class Slide  {
     this.node.containsLocalPoint = ([x, y]) =>
       x >= -0.5 && x <= 0.5 && y >= -0.5 && y <= 0.5;
 
-    console.log('...', appCtx.width, appCtx.height)
-
     this.drawSpec = {
       ...this.appCtx.mainQuad,
       textures: [img],
@@ -33,7 +31,7 @@ export class Slide  {
         zoomScale: [appCtx.width / this.slideRes.w, appCtx.height / this.slideRes.h],
         color: [0.2, 0.3, 0.5, 1],
         imageRes: [this.imageRes.w, this.imageRes.h],
-        model: this.node.mat,
+        model: <GLMat4>this.node.mat,
       },
     };
 
@@ -59,8 +57,8 @@ export class Slide  {
       duration: 1.5,
       ease: "sine.out",
       onUpdate: () => {
-        this.drawSpec.uniforms.progress = this.growState.scale;
-        this.drawSpec.uniforms.resolution = [
+        this.drawSpec.uniforms!.progress = this.growState.scale;
+        this.drawSpec.uniforms!.resolution = [
           this.growState.resX,
           this.growState.resY,
         ];
@@ -79,8 +77,8 @@ export class Slide  {
       duration: 1.5,
       ease: "sine.in",
       onUpdate: () => {
-        this.drawSpec.uniforms.progress = this.growState.scale;
-        this.drawSpec.uniforms.resolution = [
+        this.drawSpec.uniforms!.progress = this.growState.scale;
+        this.drawSpec.uniforms!.resolution = [
           this.growState.resX,
           this.growState.resY,
         ];
@@ -125,7 +123,7 @@ export class Slide  {
       setC(this.node.translate, this.node.translate[0], 0)
     }
   
-    this.drawSpec.uniforms!.model = this.node.mat;
+    this.drawSpec.uniforms!.model = <GLMat4>this.node.mat;
 
     draw(this.drawSpec);
   }
