@@ -179,10 +179,10 @@ actor.start();
 
 const fetchSlides = Promise.all(
   repeatedly(async (i) => {
-    const image = await imageFromURL(`${i+1}.jpeg`);
+    const image = await imageFromURL(`${i+1}.webp`);
     const texture = defTexture(CTX.gl, {
-      image: await imageFromURL(`${i+1}.jpeg`),
-      filter: TextureFilter.LINEAR,
+      image,
+      filter: TextureFilter.NEAREST,
       wrap: TextureRepeat.CLAMP,
       flip: true,
     });
